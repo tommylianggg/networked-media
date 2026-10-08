@@ -1,0 +1,155 @@
+html, body{
+    box-sizing: border-box;
+    margin: 0px;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+.sky{
+    width: 150vw;
+    height: 150vh;
+    position: fixed;
+    top: -25%;
+    left: -25%;
+    background-position: center;
+    background-size: cover;
+    transition: background 3s;
+    z-index: 1;
+}
+.sky.day{
+    background-image: url(pics/Ellipse3.png);
+}
+.sky.sunset{
+    background-image: url(pics/Ellipse1.png);
+}
+.sky.night{
+    background-image: url(pics/Ellipse2.png);
+}
+.wall{
+    width: 100vw;
+    bottom: 0%;
+    left: 0%;
+    position: fixed;
+    z-index: 2;
+}
+.wall img{
+    width: 100%;
+}
+.altar{
+    width: 100vw;
+    height: 45vh;
+    bottom: 0%;
+    left: 0%;
+    position: fixed;
+    z-index: 4;
+}
+.altar img{
+    width: 50vw;
+    height: 100%;
+    display: block;
+    margin: auto;
+}
+.flame{
+    position: fixed;
+    width: 40vw;
+    height: 30vh;
+    bottom: 38vh;
+    left: 30vw;
+    z-index: 5;
+}
+.flame img{
+    width: 100%;
+    height: 100%;
+    object-position: bottom center;
+    object-fit: contain;
+    transform-origin: bottom center;
+}
+.redflame, .orangeflame, .yellowflame{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@keyframes redf{
+    0% {
+        transform: scale(1.05,1.05) rotate(5deg);
+    }
+    50% {
+        transform: scale(0.95,0.95) rotate(-5deg);
+    }
+    100% {
+        transform: scale(1.05,1.05) rotate(5deg);
+    }
+}
+@keyframes orangef{
+    0% {
+        transform: scale(0.95,0.95) rotate(-3deg);
+    }
+    50% {
+        transform: scale(1.05,1.05) rotate(3deg);
+    }
+    100% {
+        transform: scale(0.95,0.95) rotate(-3deg);
+    }
+}
+@keyframes yellowf{
+    0% {
+        transform: scale(1.05,1.05) rotate(3deg);
+    }
+    50% {
+        transform: scale(0.95,0.95) rotate(-3deg);
+    }
+    100% {
+        transform: scale(1.05,1.05) rotate(3deg);
+    }
+}
+.redflame img{
+    animation: redf 2500ms infinite
+}
+.orangeflame img{
+    animation: orangef 2200ms infinite
+}
+.yellowflame img{
+    animation: yellowf 2000ms infinite
+}
+.datecounter{
+    width: 24vw;
+    height: 14vh;
+    bottom: 13vh;
+    margin-left: 38vw;
+    position: fixed;
+    z-index: 4;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.2vw;
+}
+.scratch{
+    width: 0.5vw;
+    height: 8vh;
+    transform: rotate(-10deg);
+    background-color: rgb(32, 30, 30);
+    box-shadow: outset -2px -2px 0.1vw rgba(0, 0, 0, 0.7);
+}
+.slash{
+    width: 0.5vw;
+    height: 8vh;
+    transform: rotate(-80deg);
+    margin-left: -1.7vw;
+    margin-right: 1.7vw;
+    background-color: rgb(34, 17, 17);
+    box-shadow: outset -2px -2px 0.1vw rgba(0, 0, 0, 0.7);
+}
+.bird{
+    position: fixed;
+    animation: fly 8000ms linear;
+    z-index: 3;
+}
+@keyframes fly{
+    0% {
+        left: -10vw;
+    }
+    100% {
+        left: 110vw;
+    }
+}
