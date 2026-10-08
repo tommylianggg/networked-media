@@ -1,0 +1,27 @@
+html, body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0px;
+    /* change border box to include margin, border, padding when calculating */
+    box-sizing: border-box;
+}
+body{
+    border: 5px solid navy;
+    padding: 10px;
+}
+.parent{
+    background-color: aquamarine;
+    position: relative;
+}
+.child{
+    background-color: blueviolet;
+    position: absolute;
+    /* margin from the relative parent */
+    top: 10px;
+    right: 20px;
+}
+.parent2{
+    background-color: antiquewhite;
+    z-index: -1;
+}
