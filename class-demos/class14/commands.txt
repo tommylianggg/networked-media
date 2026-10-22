@@ -1,0 +1,3 @@
+npm init -y
+// dont need to enter a lot of enters
+npm install express nunjucks
