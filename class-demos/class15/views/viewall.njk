@@ -1,0 +1,13 @@
+{% include 'partialnav.njk' %}
+{# to access access #}
+{# messageArray #}
+{% for singleMessage in messageArray %}
+    <p>
+        <span>User: </span>
+        <span>{{singleMessage.user}}</span>
+    </p>
+    <p>
+        <span>Message: </span>
+        <span>{{singleMessage.message}}</span>
+    </p>
+{% endfor %}

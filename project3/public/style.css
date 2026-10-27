@@ -1,0 +1,285 @@
+/* add ancient greek feeling fonts to project */
+/* learnt from AI, see coding.md */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:ital@0;1&display=swap');
+
+/* this is because god need to wait before reply */
+/* so its original state is none */
+#god_reply_to {
+    display: none
+}
+#reply_result {
+    display: none
+}
+/* setting up background for three places */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    font-family: 'EB Garamond';
+}
+.olympus {
+    background-image: url('images/greek_olympus.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.earth {
+    background-image: url('images/greek_earth.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.underworld {
+    background-image: url('images/greek_underworld.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* for homepage */
+.home {
+    background-image: url('images/greek_home.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.home div {
+    width: 43vw;
+    margin-left: 5vw;
+    padding-top: 16vh;
+    text-align: center;
+}
+/* the link jump to the earth page */
+.first_enter {
+    display: block;
+    width: 43vw;
+    margin-left: 5vw;
+    margin-top: 5vh;
+    text-align: center;
+    font-family: 'Cinzel';
+    -webkit-text-stroke: 2px gold;
+    paint-order: stroke fill;
+}
+
+/* header and description for each page */
+h1 {
+    text-align: center;
+    font-size: 4vw;
+    -webkit-text-stroke: 4px gold;
+    paint-order: stroke fill;
+}
+.description {
+    text-align: center;
+    color: #2a1a0e;
+    -webkit-text-stroke: 2px gold;
+    paint-order: stroke fill;
+}
+/* special setup for underworld dark bg */
+.underworld h1, .underworld .description {
+    color: whitesmoke;
+}
+
+/* the line "god is judging you" */
+#waiting {
+    text-align: center;
+    font-family: 'Cinzel';
+    font-size: 2vw;
+    font-weight: bold;
+    color: whitesmoke;
+    -webkit-text-stroke: 2px rgb(130, 110, 0);
+    paint-order: stroke fill;
+    animation: waiting 1.5s ease-in-out infinite;
+}
+/* shinning effect, show god is thinking */
+/* learnt during project 2 */
+@keyframes waiting {
+    0%   { opacity: 1; }
+    50%  { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* set font for titles */
+/* this font is more decorative, not good for normal texts */
+h1, h2, h3, .header a, .footer a, .altar_button {
+    font-family: 'Cinzel';
+}
+
+/* style for header */
+/* header will fixed on top of the screen */
+/* with high z-index */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 7vh;
+    background-image: url('images/header.png');
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    text-align: left;
+    line-height: 7vh;
+    z-index: 10;
+}
+/* for texts inside header */
+.header a {
+    font-size: 2.5vh;
+    font-weight: bold;
+    color: whitesmoke;
+    margin: 0 2vw;
+    /* learnt this from AI, see coding.md file */
+    -webkit-text-stroke: 2px rgb(133, 113, 0);
+    paint-order: stroke fill;
+}
+
+/* for footer, i copied from header and did small moderation */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7vh;
+    background-image: url('images/footer.png');
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    text-align: left;
+    line-height: 7vh;
+    z-index: 10;
+}
+/* for texts inside header */
+.footer a {
+    font-size: 1.8vh;
+    font-weight: bold;
+    color: whitesmoke;
+    margin: 0 2vw;
+    -webkit-text-stroke: 2px rgb(133, 113, 0);
+    paint-order: stroke fill;
+}
+
+main {
+    padding-top: 9vh;
+    padding-bottom: 9vh;
+}
+.earth_posts {
+    width: 50%;
+    padding: 2vw;
+    box-sizing: border-box;
+}
+.altar {
+    position: fixed;
+    bottom: 9vh;
+    right: 8%;
+}
+.altar_image {
+    display: block;
+    height: 60vh;
+}
+.name_box, .message_box {
+    box-sizing: border-box;
+    padding: 1vh;
+    border: none;
+    border-bottom: 2px solid #694322;
+    background-color: rgba(255, 226, 190, 0.5);
+    font-size: 1.8vh;
+    color: #27160a;
+    font-family: 'EB Garamond';
+}
+/* where users enter their name */
+.name_box {
+    position: absolute;
+    top: 42%;
+    left: 18%;
+    width: 64%;
+    height: 6%;
+}
+/* where users enter their messages */
+.message_box {
+    position: absolute;
+    top: 51%;
+    left: 18%;
+    width: 64%;
+    height: 24%;
+    resize: none;
+}
+
+.altar_button {
+    position: absolute;
+    top: 5%;
+    left: 32%;
+    width: 36%;
+    height: 6%;
+    background: none;
+    cursor: pointer;
+    font-size: 1.6vh;
+    font-weight: bold;
+    color: black;
+    -webkit-text-stroke: 2px gold;
+    paint-order: stroke fill;
+}
+
+/* the fire on the altar */
+/* the submit button is under the fire */
+.altar_fire {
+    position: absolute;
+    bottom: 96%;
+    left: 33%;
+    width: 30%;
+    display: none;
+    pointer-events: none;
+}
+/* I want user move cursor on top of submit button */
+/* then the fire will be started */
+/* so it will be a holy process to offering gods */
+/* learnt this from AI, see coding.md */
+.altar_button:hover ~ .altar_fire {
+    display: block;
+}
+
+.post_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw;
+    align-items: start;
+    padding: 0 3vw;
+}
+
+/* add styling to posts */
+/* including background image, alignment... */
+.god_post, .god_reply, .man_post, .bad_post {
+    box-sizing: border-box;
+    aspect-ratio: 5 / 2;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+.god_reply, .man_post, .bad_post {
+    aspect-ratio: 3.3 / 1;
+}
+
+/* I need to adjust margin/padding one by one because images were not same */
+.god_post {
+    width: 100%;
+    padding: 10% 18%;
+    background-image: url('images/greek_godpost.png');
+}
+.god_reply {
+    width: 36vw;
+    margin: 0 auto 4vh auto;
+    padding: 4% 12%;
+    background-image: url('images/greek_godreply.png');
+}
+.man_post {
+    width: 42vw;
+    margin: 3vh auto 1vh auto;
+    padding: 7% 10%;
+    background-image: url('images/greek_earthpost.png');
+}
+.bad_post {
+    width: 50vw;
+    margin: 3vh auto 1vh auto;
+    padding: 4% 10%;
+    background-image: url('images/greek_underworldpost.png');
+    /* here used a lighter color because background image */
+    /* was in dark color */
+    color: #e4eadf;
+}

@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Earth</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body class="earth">
+        {% include 'partialhead.njk' %}
+        {# for main contents, such as posts #}
+        <main>
+            {# because I want the altar fix in position #}
+            {# but user can still scroll down the posts #}
+            {# so I used 2 divs to seperate them #}
+            <div class="earth_posts">
+                <h1>Earth</h1>
+                <h3 class="description">Home of the humans</h3>
+                {# for loop to organize the messages from humans #}
+                {% for post in manPosts %}
+                    <div class="man_post">
+                        <h3>{{ post.man }}</h3>
+                        <p>{{ post.message }}</p>
+                    </div>
+                    {# here i need to see if the god reply the post #}
+                    {% if post.reply %}
+                        <div class="god_reply">
+                            <h3>{{ post.god }}</h3>
+                            <p>{{ post.reply }}</p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {# here is the place user send their posts or offering #}
+            {# so I need an altar here, a form and submit button #}
+            <div class="altar">
+                <img src="images/greek_altar.png" class="altar_image">
+                <form method="post" action="/offer">
+                    <input type="text" name="man" placeholder="your name, mortal?" class="name_box">
+                    {# allow users write multiple lines #}
+                    {# learnt from AI, see coding.md file #}
+                    <textarea name="message" placeholder="your prayer?" class="message_box" maxlength="120"></textarea>
+                    <input type="submit" value="OFFER TO GODS" class="altar_button">
+                    <img src="images/greek_fire.png" class="altar_fire">
+                </form>
+            </div>
+
+
+        </main>
+        {% include 'partialfoot.njk' %}
+    </body>
+</html>

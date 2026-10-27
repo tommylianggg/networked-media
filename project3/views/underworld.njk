@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Underworld</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body class="underworld">
+        {% include 'partialhead.njk' %}
+        {# for main contents, such as posts #}
+        <main>
+            <h1>Underworld</h1>
+            <h3 class="description">Place for the scorned</h3>
+            {# for loop #}
+            {% for post in badPosts %}
+                <div class="bad_post">
+                    {# here use post.man because these were posts on Earth #}
+                    {# Zeus felt bad about them so moved them to underworld #}
+                    {# but the contents remain unchanged #}
+                    <h3>{{ post.man }}</h3>
+                    <p>{{ post.message }}</p>
+                </div>
+                {# if the post was replied with bad replies #}
+                {% if post.reply %}
+                    <div class="god_reply">
+                        <h3>{{ post.god }}</h3>
+                        <p>{{ post.reply }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </main>
+        {% include 'partialfoot.njk' %}
+    </body>
+</html>

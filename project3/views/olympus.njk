@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Olympus</title>
+        <link href="style.css" rel="stylesheet">
+        <script src="main.js"></script>
+    </head>
+    <body class="olympus">
+        {% include 'partialhead.njk' %}
+        {# for main contents, such as posts #}
+        <main>
+            <h1>Olympus</h1>
+            <h3 class="description">Dwelling of the Gods</h3>
+
+            {# here is for new offer #}
+            {# these functions only work if there's a new offering #}
+            {% if offer %}
+                <div class="offer_from">
+                    {# here i want to show the original post written by user #}
+                    <div class="man_post">
+                        <h3>{{ offer.man }}</h3>
+                        <p>{{ offer.message }}</p>
+                    </div>
+                    <p id="waiting">Gods are judging you...</p>
+                    {# here write the reply from god #}
+                    <div class="god_reply" id="god_reply_to">
+                        <h3>{{ offer.god }}</h3>
+                        <p>{{ offer.reply }}</p>
+                    </div>
+                </div>
+                {# this jump to the result page #}
+                <a href="{{ waytogo }}" id="reply_result"></a>
+            {% endif %}
+
+            {# here I want to align posts in grid #}
+            <div class="post_grid">
+                {# for loop to organize the messages from gods #}
+                {% for post in godPosts %}
+                    <div class="god_post">
+                        <h3>{{ post.god }}</h3>
+                        <p>{{ post.message }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </main>
+        {% include 'partialfoot.njk' %}
+    </body>
+</html>

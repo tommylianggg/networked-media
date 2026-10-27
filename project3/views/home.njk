@@ -1,0 +1,22 @@
+<html>
+    <head>
+        {# a mysterious name #}
+        <title>Unknown</title>
+        {# link to css stylesheet #}
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body class="home">
+        {# I removed the header here so user can only go to Earth #}
+        {# homepage here is for simple introduction #}
+        {# main content #}
+        <div>
+            <h1>Welcome to Olympus</h1>
+            <h3>Please the gods, mortal.</h3>
+            <h3>Make offerings, pray gods.</h3>
+        </div>
+        {# only way to jump to earth #}
+        <a href="/earth" class="first_enter">Start your journey on Earth</a>
+        {# for footer #}
+        {% include 'partialfoot.njk' %}
+    </body>
+</html>

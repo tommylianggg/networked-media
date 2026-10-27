@@ -1,0 +1,9 @@
+{% include 'partialnav.njk' %}
+{# method: type of we are doing, always post for method #}
+{# action: route handle the server #}
+{# need app.post in server.js #}
+<form method="post" action="/send-message">
+    <input type="text" placeholder="name" name="user">
+    <input type="text" placeholder="type something" name="message">
+    <input type="submit" value="send message">
+</form>
