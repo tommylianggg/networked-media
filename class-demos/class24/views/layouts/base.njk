@@ -1,0 +1,29 @@
+{# a layout template #}
+<html>
+  <head>
+    {# a placeholder to inject some html depending on the page #}
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="style.css" />
+    {% block extraStyleSheet %} {% endblock %}
+  </head>
+  
+  <body>
+    <section></section>
+    <main>
+      <nav>
+        Page Visits: {{ serverData }}
+        <div class="links">
+          <a href="/">home</a>
+          <a href="/about">about</a>
+          <div>
+            <a href="/login">login</a> /
+            <a href="/signup">signup</a>
+          </div>
+        </div>
+      </nav>
+      {% block content %} {% endblock %}
+
+    </main>
+    <section></section>
+  </body>
+</html>
